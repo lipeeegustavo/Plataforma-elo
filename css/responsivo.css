@@ -1,0 +1,36 @@
+/* Plataforma Elo · ajustes finos de responsividade (celular, tablet e celular deitado).
+   Carregado por último: só muda tamanho e posição, sem alterar o visual. */
+
+@media (max-width: 1023px) {
+  /* iPhone: campos com letra menor que 16 px dão zoom ao tocar */
+  #app input, #app select, #app textarea { font-size: 16px; }
+
+  /* botão Demo compacto (só o ícone), para não cobrir botões e campos */
+  body[data-area] .fab { width: 44px; height: 44px; min-height: 44px; padding: 0; justify-content: center; border-radius: 22px; }
+  body[data-area] .fab span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  body[data-area="entry"] .fab { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+
+  /* espaço no fim da tela para o último conteúdo passar do botão Demo */
+  body[data-area="aluno"] .screen { padding-bottom: 76px; }
+
+  /* avisos acima da barra de abas */
+  body[data-area="aluno"] .toast { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 900px) {
+  body[data-area="pedro"] .toast { bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* celular deitado: barras mais baixas para sobrar espaço para o conteúdo */
+@media (max-height: 500px) and (orientation: landscape) {
+  .tabbar { padding-top: 2px; padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px)); }
+  .tabbar a { min-height: 42px; flex-direction: row; gap: 6px; }
+  .pd-tab { padding-top: 2px; padding-bottom: calc(4px + env(safe-area-inset-bottom, 0px)); }
+  .pd-tab a, .pd-tab button { min-height: 42px; flex-direction: row; gap: 6px; }
+  .pd-top { padding-top: calc(6px + env(safe-area-inset-top, 0px)); padding-bottom: 6px; }
+  body[data-area="aluno"] .fab { bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+  body[data-area="pedro"] .fab { bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+  body[data-area="aluno"] .toast, body[data-area="pedro"] .toast { bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
+  .screen { padding-top: calc(12px + env(safe-area-inset-top, 0px)); }
+  .hello .h1 { font-size: 28px; }
+  .hero-card .big { font-size: 32px; }
+}
