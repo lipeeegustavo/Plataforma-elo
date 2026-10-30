@@ -243,3 +243,20 @@ a.prod:hover { border-color: var(--line); }
 .hero-list .dotk { width: 18px; height: 18px; border-radius: 9px; border: 1.5px solid var(--line); flex-shrink: 0; display: grid; place-items: center; color: var(--brand-ink); }
 .hero-list .done .dotk { background: var(--brand); border-color: transparent; }
 .hero-list .done span:last-child { color: var(--muted); text-decoration: line-through; }
+
+
+/* Responsividade: registro de séries e barra de navegação */
+@media (max-width: 600px) {
+  .loghead, .logrow { grid-template-columns: minmax(50px, 1.05fr) repeat(3, minmax(0, 0.9fr)) 40px; gap: 3px; min-width: 0; }
+  .loghead > *, .logrow > * { min-width: 0; }
+  .logrow .in, .logrow input, .logrow select { min-width: 0; max-width: 100%; padding-left: 4px; padding-right: 4px; }
+  .xc-body, .xc-main, .xc-t { min-width: 0; }
+  .xc-main b, .xc-meta { overflow-wrap: anywhere; }
+  .tabbar { padding-left: max(4px, env(safe-area-inset-left, 0px)); padding-right: max(4px, env(safe-area-inset-right, 0px)); }
+  .tabbar a { min-width: 0; min-height: 48px; font-size: 12px; }
+  .sticky-cta { padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px)); }
+  .photo-slot .btn.sm { min-height: 40px; }
+}
+@media (min-width: 601px) and (max-width: 1023px) {
+  .loghead, .logrow { min-width: 0; }
+}
