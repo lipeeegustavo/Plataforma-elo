@@ -1,4 +1,4 @@
-/* TeamVechi demo — núcleo: rotas, renderização, eventos, painel da demo, modais e componentes compartilhados */
+/* ATTO demo — núcleo: rotas, renderização, eventos, painel da demo, modais e componentes compartilhados */
 (function () {
   const TV = window.TV;
   const U = TV.U;
@@ -39,7 +39,7 @@
     if (url) return '<span class="av has-img ' + (cls || '') + '" aria-hidden="true"><img src="' + U.esc(url) + '" alt="" draggable="false"></span>';
     return '<span class="av ' + (cls || '') + '" aria-hidden="true">' + U.esc(U.initials(s ? s.name : '?')) + '</span>';
   };
-  TV.logo = (cls) => '<span class="mark ' + (cls || '') + '" aria-hidden="true">TV</span>';
+  TV.logo = (cls) => '<span class="mark ' + (cls || '') + '" aria-hidden="true"><svg viewBox="0 0 24 24" width="62%" height="62%"><path d="M12 2.5 22.5 21h-4.6L12 10.6 6.1 21H1.5z" fill="currentColor"/><path d="M12 14.2 15 19.5H9z" fill="currentColor" opacity=".6"/></svg></span>';
   TV.videoBox = (e) => {
     if (TV.blobs[e.id]) return '<div class="vbox"><video src="' + TV.blobs[e.id] + '" controls playsinline preload="metadata"></video></div>';
     if (e.video) {
@@ -102,7 +102,7 @@
   function entry() {
     const T = TV.today();
     return '<main class="entry"><div class="entry-in">' +
-      '<div class="entry-brand">' + TV.logo('xl') + '<div><p class="eyebrow">Demonstração do aplicativo</p><h1 class="d hero">TeamVechi</h1></div></div>' +
+      '<div class="entry-brand">' + TV.logo('xl') + '<div><p class="eyebrow">Demonstração do aplicativo</p><h1 class="d hero">ATTO</h1></div></div>' +
       '<p class="lead">Escolha como você quer entrar. Os dois lados estão conectados: o que o Pedro publica aparece para o aluno, e o que o aluno registra chega para o Pedro.</p>' +
       '<div class="entry-cards">' +
       '<a class="entry-card" href="#/pedro/inicio" data-act="as" data-arg="pedro"><span class="ec-ico">' + U.ic('users', 28) + '</span><span class="ec-txt"><span class="eyebrow">Plataforma do personal</span><b class="d">Entrar como Pedro</b><span class="muted">Alunos, fichas, vídeos, alimentação, check-ins, financeiro e loja. Funciona no computador e no celular.</span></span>' + U.ic('fwd', 22) + '</a>' +
@@ -286,7 +286,7 @@
     TV.present = ss.get('tv-present') === '1';
     if (q.has('passo')) ss.set('tv-step', String(Math.max(0, +q.get('passo') || 0)));
     if (q.get('continuar') === '1') { const last = ss.get('tv-last'); if (last && last.indexOf('#/') === 0 && !location.hash) { try { history.replaceState(null, '', location.pathname + last); } catch (e) { location.hash = last; } } }
-    if (q.get('reiniciar') === '1') { try { localStorage.removeItem('teamvechi-demo-v1'); } catch (e) { /* ok */ } ss.set('tv-step', '0'); TV.pendingClearAvatars = true; }
+    if (q.get('reiniciar') === '1') { try { localStorage.removeItem('atto-demo-v1'); } catch (e) { /* ok */ } ss.set('tv-step', '0'); TV.pendingClearAvatars = true; }
     if (q.has('modo') || q.has('reiniciar') || q.has('passo') || q.has('continuar')) { try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) { /* file:// em alguns navegadores */ } }
   })();
 })();

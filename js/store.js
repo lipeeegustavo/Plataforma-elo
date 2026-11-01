@@ -1,9 +1,9 @@
-/* TeamVechi demo — estado compartilhado entre o app do aluno e a plataforma do Pedro.
+/* ATTO demo — estado compartilhado entre o app do aluno e a plataforma do Pedro.
    Tudo fica salvo no navegador (localStorage). Os dois lados leem e escrevem no mesmo estado. */
 (function () {
   const TV = window.TV;
   const U = TV.U;
-  const KEY = 'teamvechi-demo-v1';
+  const KEY = 'atto-demo-v1';
 
   TV.blobs = {}; // vídeos enviados nesta sessão (não sobrevivem ao recarregar)
 

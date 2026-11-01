@@ -1,4 +1,4 @@
-/* TeamVechi demo — plataforma do Pedro. Sidebar no computador; no celular, barra superior + barra inferior com "Mais". */
+/* ATTO demo — plataforma do Pedro. Sidebar no computador; no celular, barra superior + barra inferior com "Mais". */
 .pd { display: grid; grid-template-columns: 252px minmax(0, 1fr); min-height: 100dvh; }
 .pd-side { position: sticky; top: 0; height: 100dvh; background: #141413; border-right: 1px solid var(--line); padding: 20px 14px; display: flex; flex-direction: column; gap: 18px; overflow-y: auto; }
 .pd-brand { display: flex; align-items: center; gap: 10px; padding: 0 6px; }
@@ -23,7 +23,7 @@
   .pd-top b { font-size: 19px; }
   .pd-top .dotb { position: absolute; top: 7px; right: 8px; width: 9px; height: 9px; border-radius: 5px; background: var(--brand); }
   .pd-main { padding: 18px max(16px, env(safe-area-inset-right, 0px)) 120px max(16px, env(safe-area-inset-left, 0px)); }
-  .pd-tab { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background: #161615; border-top: 1px solid var(--line); padding: 6px max(4px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(4px, env(safe-area-inset-left, 0px)); }
+  .pd-tab { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background: #13111C; border-top: 1px solid var(--line); padding: 6px max(4px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(4px, env(safe-area-inset-left, 0px)); }
   .pd-tab a, .pd-tab button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 54px; color: var(--dim); text-decoration: none; font-size: 12.5px; font-weight: 700; background: transparent; border: 0; position: relative; }
   .pd-tab a[aria-current="page"], .pd-tab button.on { color: var(--brand); }
   .pd-tab .badge { position: absolute; top: 2px; left: calc(50% + 6px); min-width: 19px; height: 19px; font-size: 12px; }
@@ -54,7 +54,7 @@ a.kpi:hover { border-color: var(--line); }
 .kpi-ic { width: 38px; height: 38px; border-radius: 12px; background: var(--s2); color: var(--muted); display: grid; place-items: center; }
 .kpi > span { font-weight: 700; font-size: 15.5px; }
 .kpi .xs { color: var(--muted); font-weight: 500; }
-.kpi.hot { border-color: rgba(255, 90, 31, 0.55); background: linear-gradient(160deg, rgba(255, 90, 31, 0.16), var(--s1) 60%); }
+.kpi.hot { border-color: rgba(138, 92, 255, 0.55); background: linear-gradient(160deg, rgba(138, 92, 255, 0.16), var(--s1) 60%); }
 .kpi.hot b { color: var(--brand); }
 .kpi.hot .kpi-ic { background: var(--brand); color: var(--brand-ink); }
 .kpi-go { margin-top: 6px; display: inline-flex; align-items: center; gap: 4px; color: var(--brand); font-size: 13.5px !important; font-weight: 800 !important; }
@@ -122,7 +122,7 @@ details.sess[open] summary > .ic { transform: rotate(180deg); }
 .setrow .field > label { font-size: 12px; }
 .pv-ex { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
 .versions { display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line); }
-.pv-phone { width: 360px; max-width: 100%; margin: 0 auto; border: 8px solid #232321; border-radius: 36px; background: var(--app); overflow: hidden; }
+.pv-phone { width: 360px; max-width: 100%; margin: 0 auto; border: 8px solid #201D2B; border-radius: 36px; background: var(--app); overflow: hidden; }
 .pv-screen { max-height: 62dvh; overflow-y: auto; padding: 18px 14px; display: flex; flex-direction: column; gap: 10px; }
 
 /* biblioteca */

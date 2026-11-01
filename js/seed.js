@@ -1,4 +1,4 @@
-/* TeamVechi demo — dados fictícios de demonstração.
+/* ATTO demo — dados fictícios de demonstração.
    A data simulada começa sempre numa quinta-feira, para o check-in do fim de semana estar a dois dias. */
 (function () {
   const TV = window.TV;
@@ -215,11 +215,11 @@
 
     /* ---------- loja e parceiros ---------- */
     const products = [
-      { id: 'p-camiseta', name: 'Camiseta TeamVechi', price: 89.9, desc: 'Algodão com elastano e corte esportivo. Estampa TeamVechi no peito.', sizes: ['P', 'M', 'G', 'GG'], art: 'camiseta', img: null, available: true, published: true },
-      { id: 'p-regata', name: 'Regata Dry TeamVechi', price: 79.9, desc: 'Tecido leve que seca rápido, ideal para treinos intensos.', sizes: ['P', 'M', 'G', 'GG'], art: 'regata', img: null, available: true, published: true },
-      { id: 'p-bone', name: 'Boné TeamVechi', price: 69.9, desc: 'Aba curva, regulagem traseira e logo bordado.', sizes: ['Único'], art: 'bone', img: null, available: true, published: true },
+      { id: 'p-camiseta', name: 'Camiseta ATTO', price: 89.9, desc: 'Algodão com elastano e corte esportivo. Estampa ATTO no peito.', sizes: ['P', 'M', 'G', 'GG'], art: 'camiseta', img: null, available: true, published: true },
+      { id: 'p-regata', name: 'Regata Dry ATTO', price: 79.9, desc: 'Tecido leve que seca rápido, ideal para treinos intensos.', sizes: ['P', 'M', 'G', 'GG'], art: 'regata', img: null, available: true, published: true },
+      { id: 'p-bone', name: 'Boné ATTO', price: 69.9, desc: 'Aba curva, regulagem traseira e logo bordado.', sizes: ['Único'], art: 'bone', img: null, available: true, published: true },
       { id: 'p-garrafa', name: 'Garrafa térmica 1 L', price: 59.9, desc: 'Mantém a água gelada por até 12 horas.', sizes: ['Único'], art: 'garrafa', img: null, available: true, published: true },
-      { id: 'p-coqueteleira', name: 'Coqueteleira TeamVechi', price: 39.9, desc: '600 ml com mola misturadora.', sizes: ['Único'], art: 'coqueteleira', img: null, available: false, published: true },
+      { id: 'p-coqueteleira', name: 'Coqueteleira ATTO', price: 39.9, desc: '600 ml com mola misturadora.', sizes: ['Único'], art: 'coqueteleira', img: null, available: false, published: true },
       { id: 'p-toalha', name: 'Toalha de treino', price: 34.9, desc: 'Microfibra, 40 × 80 cm.', sizes: ['Único'], art: 'toalha', img: null, available: true, published: false }
     ];
     const partners = [
@@ -229,14 +229,14 @@
     ];
     const coupons = [
       { id: id('cp'), partnerId: 'pa-mar', code: 'VECHI10', discount: '10% em toda a loja', until: U.addDays(T, 30), published: true },
-      { id: id('cp'), partnerId: 'pa-passo', code: 'TEAMVECHI15', discount: '15% em tênis de corrida', until: U.addDays(T, 12), published: true },
+      { id: id('cp'), partnerId: 'pa-passo', code: 'ATTO15', discount: '15% em tênis de corrida', until: U.addDays(T, 12), published: true },
       { id: id('cp'), partnerId: 'pa-ponto', code: 'AVALIA-TV', discount: 'Avaliação postural grátis', until: U.addDays(T, -3), published: true }
     ];
 
     const events = [
       { id: id('ev'), at: at(U.addDays(T, -1), '19:52'), text: 'Lucas concluiu o Treino B · "Treino bom! A puxada rendeu bem hoje."', sid: 's-lucas', kind: 'treino' },
       { id: id('ev'), at: at(U.addDays(T, -1), '16:40'), text: 'Convite enviado para Fernanda', sid: 's-fernanda', kind: 'aluno' },
-      { id: id('ev'), at: at(U.addDays(T, -2), '14:20'), text: 'Carla quer comprar: Camiseta TeamVechi (M)', sid: 's-carla', kind: 'loja' },
+      { id: id('ev'), at: at(U.addDays(T, -2), '14:20'), text: 'Carla quer comprar: Camiseta ATTO (M)', sid: 's-carla', kind: 'loja' },
       { id: id('ev'), at: at(U.addDays(ws(-1), 6), '19:30'), text: 'Lucas enviou o check-in da semana', sid: 's-lucas', kind: 'checkin' },
       { id: id('ev'), at: at(U.addDays(ws(-1), 6), '11:20'), text: 'Ana enviou o check-in da semana', sid: 's-ana', kind: 'checkin' }
     ];

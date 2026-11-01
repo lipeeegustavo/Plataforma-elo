@@ -1,4 +1,4 @@
-/* TeamVechi demo — app do aluno (Início, Treino, Alimentação, Loja, Perfil + convite e check-in) */
+/* ATTO demo — app do aluno (Início, Treino, Alimentação, Loja, Perfil + convite e check-in) */
 (function () {
   const TV = window.TV;
   const U = TV.U;
@@ -27,7 +27,7 @@
     const screen = '<div class="screen" id="scr" data-page="' + e_(focus && page !== 'exercicio' ? 'novo' : page) + '">' + TV.netBanner() + content + '</div>';
     if (TV.alWide()) {
       // computador, modo ampliado: menu lateral e conteúdo reorganizado em colunas
-      return '<div class="al-wrap wide"><aside class="al-nav"><div class="al-brand">' + TV.logo() + '<div><b class="d">TeamVechi</b><br><span class="muted xs">App do aluno</span></div></div>' +
+      return '<div class="al-wrap wide"><aside class="al-nav"><div class="al-brand">' + TV.logo() + '<div><b class="d">ATTO</b><br><span class="muted xs">App do aluno</span></div></div>' +
         (focus && page !== 'exercicio' ? '<p class="muted sm al-nav-note">Primeiro acesso: o menu aparece depois da anamnese.</p>' : navList(tab, 'al-menu')) +
         '<div class="al-foot"><a class="row al-me" href="#/aluno/perfil">' + TV.avatar(st) + '<div><b>' + e_(st.name) + '</b><br><span class="muted xs">Aluno</span></div></a>' + viewSwitch() +
         '<a class="btn sm ghost block" href="#/pedro/inicio" data-act="as" data-arg="pedro">' + U.ic('swap', 16) + ' Ver o lado do Pedro</a></div></aside>' +
@@ -538,7 +538,7 @@
   /* =================== LOJA =================== */
   function vLoja() {
     const tab = UI.lojaTab === 'parceiros' ? 'parceiros' : 'produtos', today = T();
-    let h = head('Loja TeamVechi', null, 'Produtos da marca e descontos de parceiros');
+    let h = head('Loja', null, 'Produtos da marca e descontos de parceiros');
     h += '<div class="seg block" role="tablist"><button role="tab" aria-selected="' + (tab === 'produtos') + '" data-act="lojaTab" data-arg="produtos">Produtos</button><button role="tab" aria-selected="' + (tab === 'parceiros') + '" data-act="lojaTab" data-arg="parceiros">Parceiros e cupons</button></div>';
     if (tab === 'produtos') {
       const ps = TV.S.products.filter((p) => p.published);
@@ -569,7 +569,7 @@
   }
   TV.M.order = (d) => {
     const p = TV.S.products.find((x) => x.id === d.id), st = cur();
-    const msg = 'Olá, Pedro! Aqui é o ' + fn(st) + '. Quero ' + (p.name.match(/^[AEIOU]/i) ? 'o' : 'a') + ' ' + p.name + (d.size && d.size !== 'Único' ? ', tamanho ' + d.size : '') + '. (Pedido feito pelo app TeamVechi)';
+    const msg = 'Olá, Pedro! Aqui é o ' + fn(st) + '. Quero ' + (p.name.match(/^[AEIOU]/i) ? 'o' : 'a') + ' ' + p.name + (d.size && d.size !== 'Único' ? ', tamanho ' + d.size : '') + '. (Pedido feito pelo app ATTO)';
     return { title: 'Pedido pelo WhatsApp', body: '<p class="muted sm">Na versão final, este botão abre o WhatsApp do Pedro com a mensagem pronta:</p><div class="wa-msg">' + e_(msg) + '</div><p class="sm">WhatsApp do Pedro: <b class="sel">' + e_(TV.S.pedro.phone) + '</b> <span class="dim">(número de exemplo)</span></p>', foot: '<button class="btn" data-act="copyMsg" data-arg="' + e_(msg) + '">' + U.ic('copy', 16) + ' Copiar mensagem</button><button class="btn pri" data-act="sendOrder" data-arg="' + p.id + '|' + (d.size || '') + '">Enviar pedido (simulação)</button>' };
   };
   TV.M.partner = (d) => { const pa = TV.S.partners.find((x) => x.id === d.id); return { title: e_(pa.name), body: '<p>Na versão final, este botão abre a loja do parceiro:</p><p><code class="sel">' + e_(pa.link) + '</code></p><p class="dim xs">Endereço de demonstração: não leva a um site real.</p>', foot: '<button class="btn pri" data-act="closeModal">Entendi</button>' }; };
@@ -694,7 +694,7 @@
     const area = (key, label, ph) => '<div class="field"><label for="onb-' + key + '">' + label + '</label><textarea class="in" id="onb-' + key + '" data-obj="onb" data-key="' + key + '" placeholder="' + e_(ph || '') + '">' + e_(o[key]) + '</textarea></div>';
     let h = '';
     if (step === 'convite') {
-      return '<div class="onb-hero">' + TV.logo('xl') + '<p class="eyebrow">Convite</p><h1 class="d hero-sm">O Pedro te chamou para o TeamVechi</h1><p class="muted">Aqui você vai receber sua ficha de treino com vídeos de cada exercício, registrar suas refeições e água e fazer o check-in da semana.</p></div>' +
+      return '<div class="onb-hero">' + TV.logo('xl') + '<p class="eyebrow">Convite</p><h1 class="d hero-sm">O Pedro te chamou para o ATTO</h1><p class="muted">Aqui você vai receber sua ficha de treino com vídeos de cada exercício, registrar suas refeições e água e fazer o check-in da semana.</p></div>' +
         '<div class="card hl"><span class="lbl">Plano combinado com o Pedro</span><b class="lg">Consultoria ' + e_(TV.plan(st.planId).name.toLowerCase()) + '</b><span class="muted sm">' + U.money(TV.plan(st.planId).price) + ' · valor de exemplo</span></div>' + '<button class="btn pri lg block" data-act="onbNext" data-arg="convite">Aceitar convite</button><a class="linkbtn center" href="#/">Voltar para a escolha de perfil</a>';
     }
     h += prog;

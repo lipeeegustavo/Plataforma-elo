@@ -1,4 +1,4 @@
-/* TeamVechi demo — foto de perfil (aluno e Pedro).
+/* ATTO demo — foto de perfil (aluno e Pedro).
    Seleciona do dispositivo, recorta em círculo (arrastar + zoom), salva otimizada (JPEG 320×320)
    no IndexedDB do navegador. Se o IndexedDB não estiver disponível, usa o localStorage. */
 (function () {

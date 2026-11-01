@@ -1,4 +1,4 @@
-# Plataforma Elo · Protótipo navegável
+# ATTO · Protótipo navegável
 
 Protótipo em HTML, CSS e JavaScript puros com as telas da plataforma:
 
@@ -7,7 +7,7 @@ Protótipo em HTML, CSS e JavaScript puros com as telas da plataforma:
 
 Os dois lados usam os mesmos dados: o que o profissional publica aparece para o aluno, e o que o aluno registra chega para o profissional.
 
-É um protótipo para validar a ideia: não tem servidor, login real nem pagamento. Os dados são fictícios e ficam salvos no navegador (localStorage). As telas ainda usam o nome provisório da versão anterior (TeamVechi).
+É um protótipo para validar a ideia: não tem servidor, login real nem pagamento. Os dados são fictícios e ficam salvos no navegador (localStorage). Marca ATTO, com a identidade em roxo; as cores ficam nas variáveis `--brand*` do `css/base.css`.
 
 ## Como abrir
 

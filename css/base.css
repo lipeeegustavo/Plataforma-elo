@@ -1,18 +1,19 @@
-/* TeamVechi demo — base: identidade visual (preto, laranja, branco), tipografia e componentes compartilhados.
-   Visual único escuro, por escolha da marca. A cor --brand pode ser trocada pela cor oficial do TeamVechi. */
+/* ATTO — base: identidade visual (escuro com roxo), tipografia e componentes compartilhados.
+   As cores da marca ficam nas variáveis --brand* logo abaixo. */
 :root {
-  --bg: #0A0A09;
-  --app: #111110;
-  --s1: #1A1A18;
-  --s2: #232321;
-  --s3: #2F2F2C;
-  --line: #36362F;
+  --bg: #09080F;
+  --app: #100E18;
+  --s1: #17151F;
+  --s2: #201D2B;
+  --s3: #2B2738;
+  --line: #342F44;
   --fg: #F5F4F0;
-  --muted: #B6B5AD;
-  --dim: #9C9A92;
-  --brand: #FF5A1F;
-  --brand-ink: #111110;
-  --brand-soft: rgba(255, 90, 31, 0.13);
+  --muted: #BCB7CC;
+  --dim: #9E99AE;
+  --brand: #8A5CFF;
+  --brand-2: #6A3CF5;
+  --brand-ink: #FFFFFF;
+  --brand-soft: rgba(138, 92, 255, 0.16);
   --ok: #6BCB8F;
   --warn: #F2BC52;
   --err: #FF7B6B;
@@ -80,7 +81,7 @@ code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.95em
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid var(--line); background: transparent; color: var(--fg); font-weight: 700; font-size: 15px; text-decoration: none; text-align: center; line-height: 1.15; transition: background-color .15s, border-color .15s, transform .08s, filter .15s; }
 .btn:hover { border-color: var(--muted); }
 .btn:active { transform: scale(0.98); }
-.btn.pri { background: var(--brand); color: var(--brand-ink); border-color: transparent; }
+.btn.pri { background: linear-gradient(90deg, var(--brand-2), var(--brand)); color: var(--brand-ink); border-color: transparent; }
 .btn.pri:hover { filter: brightness(1.07); }
 .btn.ghost { border-color: transparent; color: var(--muted); }
 .btn.ghost:hover { color: var(--fg); background: var(--s2); }
@@ -195,8 +196,8 @@ select.in { padding: 0 10px; }
 .ph-empty { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: var(--dim); font-size: 13px; }
 
 /* ---------- vídeo ---------- */
-.vbox { border-radius: 18px; overflow: hidden; background: #1E1E1C; aspect-ratio: 16 / 10; max-width: 100%; position: relative; display: grid; place-items: center; }
-.vbox.demo { background: radial-gradient(circle at 30% 20%, #2D2D2A, #151514 70%); }
+.vbox { border-radius: 18px; overflow: hidden; background: #1C1A26; aspect-ratio: 16 / 10; max-width: 100%; position: relative; display: grid; place-items: center; }
+.vbox.demo { background: radial-gradient(circle at 30% 20%, #2A2440, #13111C 70%); }
 .vbox video { width: 100%; height: 100%; object-fit: cover; background: #000; }
 .vbox-in { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; padding: 16px; width: 100%; }
 .vplay { width: 68px; height: 68px; border-radius: 34px; background: var(--brand); color: var(--brand-ink); border: 0; display: grid; place-items: center; }
@@ -248,7 +249,7 @@ select.in { padding: 0 10px; }
 .wa-msg { background: #1F2B22; border: 1px solid #2E4235; border-radius: 14px 14px 14px 4px; padding: 12px 14px; font-size: 15px; }
 
 /* ---------- entrada ---------- */
-.entry { min-height: 100dvh; padding: 40px max(16px, env(safe-area-inset-right, 0px)) 96px max(16px, env(safe-area-inset-left, 0px)); background: radial-gradient(1200px 500px at 85% -10%, rgba(255, 90, 31, 0.18), transparent 60%), var(--bg); }
+.entry { min-height: 100dvh; padding: 40px max(16px, env(safe-area-inset-right, 0px)) 96px max(16px, env(safe-area-inset-left, 0px)); background: radial-gradient(1200px 500px at 85% -10%, rgba(138, 92, 255, 0.18), transparent 60%), var(--bg); }
 .entry-in { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
 .entry-brand { display: flex; align-items: center; gap: 18px; }
 .lead { font-size: 18px; color: var(--muted); max-width: 62ch; }

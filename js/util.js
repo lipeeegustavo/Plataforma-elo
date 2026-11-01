@@ -1,4 +1,4 @@
-/* TeamVechi demo — utilitários compartilhados (datas, formatação, ícones, gráficos, ilustrações) */
+/* ATTO demo — utilitários compartilhados (datas, formatação, ícones, gráficos, ilustrações) */
 (function () {
   const TV = (window.TV = window.TV || {});
   const U = (TV.U = {});
@@ -151,7 +151,7 @@
   /* ---------- ilustrações (sem imagens externas) ---------- */
   U.productArt = (kind) => {
     const bg = '<rect width="200" height="200" rx="0" style="fill:#1E1E1C"/><circle cx="100" cy="100" r="78" style="fill:#262624"/>';
-    const tv = (x, y, s) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:' + s + 'px;fill:var(--brand)">TV</text>';
+    const tv = (x, y, s) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:' + s + 'px;fill:var(--brand)">A</text>';
     const shapes = {
       camiseta: '<path d="M62 52l26-12h24l26 12 22 26-20 14-12-10v76H72V82l-12 10-20-14z" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/><path d="M88 40a12 10 0 0 0 24 0" style="fill:none;stroke:#3A3A36;stroke-width:3"/>' + tv(100, 108, 30),
       regata: '<path d="M74 42h14c2 14 22 14 24 0h14l-4 30 8 12v84H70V84l8-12z" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/><rect x="70" y="128" width="60" height="6" style="fill:var(--brand)"/>' + tv(100, 112, 26),

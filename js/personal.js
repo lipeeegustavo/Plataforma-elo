@@ -1,4 +1,4 @@
-/* TeamVechi demo — plataforma do Pedro (personal). Sidebar no computador, barra inferior + "Mais" no celular. */
+/* ATTO demo — plataforma do Pedro (personal). Sidebar no computador, barra inferior + "Mais" no celular. */
 (function () {
   const TV = window.TV;
   const U = TV.U;
@@ -22,10 +22,10 @@
     const content = UI.loading ? TV.skel(5) : (map[page] || dash)(p[1], p[2]);
     const nCk = pendingCk().length;
     const badge = (k) => (k === 'checkins' && nCk ? '<span class="badge">' + nCk + '</span>' : '');
-    const side = '<aside class="pd-side"><div class="pd-brand">' + TV.logo() + '<div><b class="d">TeamVechi</b><br><span class="muted xs">Plataforma do personal</span></div></div><nav class="pd-nav" aria-label="Menu da plataforma">' +
+    const side = '<aside class="pd-side"><div class="pd-brand">' + TV.logo() + '<div><b class="d">ATTO</b><br><span class="muted xs">Plataforma do personal</span></div></div><nav class="pd-nav" aria-label="Menu da plataforma">' +
       NAV.map((n) => '<a href="#/pedro/' + n[0] + '"' + (page === n[0] ? ' aria-current="page"' : '') + '>' + U.ic(n[2], 20) + '<span>' + n[1] + '</span>' + badge(n[0]) + '</a>').join('') + '</nav>' +
       '<div class="pd-foot"><a class="row pd-me" href="#/pedro/perfil"' + (page === 'perfil' ? ' aria-current="page"' : '') + '>' + TV.avatar(TV.PEDRO) + '<div><b>Pedro</b><br><span class="muted xs">Meu perfil</span></div></a><a class="btn sm ghost block" href="#/aluno/inicio" data-act="as" data-arg="s-lucas">' + U.ic('swap', 16) + ' Ver o app do aluno</a></div></aside>';
-    const top = '<header class="pd-top">' + TV.logo() + '<b class="d">TeamVechi</b><span class="grow"></span><a class="icon-btn" href="#/pedro/checkins" aria-label="Check-ins para revisar">' + U.ic('bell', 20) + (nCk ? '<span class="dotb"></span>' : '') + '</a><a class="pd-me-top" href="#/pedro/perfil" aria-label="Meu perfil">' + TV.avatar(TV.PEDRO, 'sm') + '</a></header>';
+    const top = '<header class="pd-top">' + TV.logo() + '<b class="d">ATTO</b><span class="grow"></span><a class="icon-btn" href="#/pedro/checkins" aria-label="Check-ins para revisar">' + U.ic('bell', 20) + (nCk ? '<span class="dotb"></span>' : '') + '</a><a class="pd-me-top" href="#/pedro/perfil" aria-label="Meu perfil">' + TV.avatar(TV.PEDRO, 'sm') + '</a></header>';
     const more = !MOBILE.includes(page);
     const tab = '<nav class="pd-tab" aria-label="Menu da plataforma">' + NAV.filter((n) => MOBILE.includes(n[0])).map((n) => '<a href="#/pedro/' + n[0] + '"' + (page === n[0] ? ' aria-current="page"' : '') + '>' + U.ic(n[2], 22) + '<span>' + n[1] + '</span>' + badge(n[0]) + '</a>').join('') + '<button data-act="sheet" aria-expanded="' + !!UI.sheet + '"' + (more ? ' class="on"' : '') + '>' + U.ic('more', 22) + '<span>Mais</span></button></nav>';
     const sheet = UI.sheet ? '<div class="sheet-back" data-act="sheet"></div><div class="sheet" role="dialog" aria-label="Mais opções"><div class="sheet-grip"></div>' + NAV.filter((n) => !MOBILE.includes(n[0])).map((n) => '<a href="#/pedro/' + n[0] + '">' + U.ic(n[2], 22) + '<span>' + n[1] + '</span>' + U.ic('chev', 18) + '</a>').join('') + '<a href="#/pedro/perfil">' + U.ic('user', 22) + '<span>Meu perfil</span>' + U.ic('chev', 18) + '</a><a href="#/aluno/inicio" data-act="as" data-arg="s-lucas">' + U.ic('swap', 22) + '<span>Ver o app do aluno</span>' + U.ic('chev', 18) + '</a></div>' : '';
@@ -37,7 +37,7 @@
   function perfilPedro() {
     let h = ph('Meu perfil', 'Seus dados na plataforma e no app dos alunos');
     h += '<div class="grid2c">' + TV.photoCard(TV.PEDRO, TV.hasPhoto('pedro') ? 'Aparece na plataforma e no app dos alunos, nos avisos e nos feedbacks.' : 'Sem foto: mostramos a inicial P. Ela aparece nos avisos e feedbacks do app dos alunos.') +
-      '<section class="card"><h2 class="h3">Dados</h2><div class="row between"><span class="muted">Nome</span><b>Pedro</b></div><div class="row between"><span class="muted">Marca</span><b>TeamVechi</b></div><div class="row between"><span class="muted">WhatsApp</span><b class="num">' + e_(TV.S.pedro.phone) + '</b></div><span class="dim xs">Dados de demonstração.</span></section></div>';
+      '<section class="card"><h2 class="h3">Dados</h2><div class="row between"><span class="muted">Nome</span><b>Pedro</b></div><div class="row between"><span class="muted">Marca</span><b>ATTO</b></div><div class="row between"><span class="muted">WhatsApp</span><b class="num">' + e_(TV.S.pedro.phone) + '</b></div><span class="dim xs">Dados de demonstração.</span></section></div>';
     h += '<section class="card"><h2 class="h3">Onde a sua foto aparece</h2><ul class="how sm"><li>Menu da plataforma, no computador e no celular.</li><li>Avisos para os alunos, no início do app.</li><li>Feedback dos check-ins, no app do aluno.</li></ul></section>';
     return h;
   }
