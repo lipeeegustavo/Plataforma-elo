@@ -1,6 +1,6 @@
 /* ATTO demo — plataforma do Pedro. Sidebar no computador; no celular, barra superior + barra inferior com "Mais". */
 .pd { display: grid; grid-template-columns: 252px minmax(0, 1fr); min-height: 100dvh; }
-.pd-side { position: sticky; top: 0; height: 100dvh; background: #141413; border-right: 1px solid var(--line); padding: 20px 14px; display: flex; flex-direction: column; gap: 18px; overflow-y: auto; }
+.pd-side { position: sticky; top: 0; height: 100dvh; background: rgba(18, 12, 34, 0.72); border-right: 1px solid var(--line); padding: 20px 14px; display: flex; flex-direction: column; gap: 18px; overflow-y: auto; }
 .pd-brand { display: flex; align-items: center; gap: 10px; padding: 0 6px; }
 .pd-brand b { font-size: 21px; }
 .pd-nav { display: flex; flex-direction: column; gap: 2px; }
@@ -18,7 +18,7 @@
 @media (max-width: 900px) {
   .pd { grid-template-columns: minmax(0, 1fr); }
   .pd-side { display: none; }
-  .pd-top { display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 30; padding: calc(10px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); background: rgba(10, 10, 9, 0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .pd-top { display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 30; padding: calc(10px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); background: rgba(15, 10, 28, 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
   .pd-top .mark { width: 34px; height: 34px; font-size: 15px; border-radius: 10px; }
   .pd-top b { font-size: 19px; }
   .pd-top .dotb { position: absolute; top: 7px; right: 8px; width: 9px; height: 9px; border-radius: 5px; background: var(--brand); }

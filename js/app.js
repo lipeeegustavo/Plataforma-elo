@@ -40,6 +40,7 @@
     return '<span class="av ' + (cls || '') + '" aria-hidden="true">' + U.esc(U.initials(s ? s.name : '?')) + '</span>';
   };
   TV.logo = (cls) => '<span class="mark ' + (cls || '') + '" aria-hidden="true"><svg viewBox="0 0 24 24" width="62%" height="62%"><path d="M12 2.5 22.5 21h-4.6L12 10.6 6.1 21H1.5z" fill="currentColor"/><path d="M12 14.2 15 19.5H9z" fill="currentColor" opacity=".6"/></svg></span>';
+  TV.brand = () => '<span class="wm">' + TV.logo() + '<span class="wm-t"><b class="d">ATTO</b><span>Performance Management</span></span></span>';
   TV.videoBox = (e) => {
     if (TV.blobs[e.id]) return '<div class="vbox"><video src="' + TV.blobs[e.id] + '" controls playsinline preload="metadata"></video></div>';
     if (e.video) {
@@ -102,7 +103,7 @@
   function entry() {
     const T = TV.today();
     return '<main class="entry"><div class="entry-in">' +
-      '<div class="entry-brand">' + TV.logo('xl') + '<div><p class="eyebrow">Demonstração do aplicativo</p><h1 class="d hero">ATTO</h1></div></div>' +
+      '<div class="entry-brand">' + TV.logo('xl') + '<div><p class="eyebrow">Demonstração do aplicativo</p><h1 class="d hero">ATTO</h1><p class="lead">Performance Management</p></div></div>' +
       '<p class="lead">Escolha como você quer entrar. Os dois lados estão conectados: o que o Pedro publica aparece para o aluno, e o que o aluno registra chega para o Pedro.</p>' +
       '<div class="entry-cards">' +
       '<a class="entry-card" href="#/pedro/inicio" data-act="as" data-arg="pedro"><span class="ec-ico">' + U.ic('users', 28) + '</span><span class="ec-txt"><span class="eyebrow">Plataforma do personal</span><b class="d">Entrar como Pedro</b><span class="muted">Alunos, fichas, vídeos, alimentação, check-ins, financeiro e loja. Funciona no computador e no celular.</span></span>' + U.ic('fwd', 22) + '</a>' +

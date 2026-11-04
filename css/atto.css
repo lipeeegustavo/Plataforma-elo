@@ -1,0 +1,103 @@
+/* ATTO · acabamento visual: brilho roxo, cartões arredondados, títulos em caixa normal e barra de abas.
+   Só muda a aparência. Vem depois de base, aluno e personal, e antes de responsivo. */
+
+/* ---------- fundo com brilho roxo ---------- */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(760px 460px at 88% -8%, rgba(124, 58, 237, 0.34), transparent 70%), radial-gradient(620px 420px at -6% 104%, rgba(109, 46, 240, 0.2), transparent 70%); }
+body[data-area="aluno"], .entry { background: transparent; }
+.phone { background: radial-gradient(520px 340px at 100% -6%, rgba(124, 58, 237, 0.34), transparent 72%), var(--app); }
+.phone-notch { background: transparent; }
+.al-wrap.wide .phone, .al-main { background: transparent; }
+.pd-side, .al-nav { backdrop-filter: blur(14px); border-right-color: var(--edge); }
+
+/* ---------- títulos em caixa normal ---------- */
+.d { font-weight: 700; text-transform: none; letter-spacing: -0.012em; line-height: 1.08; }
+.h1 { font-size: 30px; }
+.h2 { font-size: 16px; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--fg); }
+.eyebrow { font-size: 13.5px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--brand-lt); }
+.btn.lg { font-family: var(--f-b); font-weight: 700; font-size: 18px; text-transform: none; letter-spacing: 0; }
+.loghead, .tbl th { text-transform: none; letter-spacing: 0; font-size: 12.5px; }
+.modal-head .h2 { font-size: 22px; letter-spacing: -0.012em; }
+.ph .h1 { font-size: 32px; }
+.hello .h1 { font-size: 30px; }
+.al-wrap.wide .h1, .al-wrap.wide .sc-head .h1 { font-size: 36px; }
+.al-wrap.wide .hello .h1 { font-size: 42px; }
+.al-wrap.wide .h2 { font-size: 17px; }
+.al-wrap.wide .hero-card .big { font-size: 48px; }
+.ec-txt b { font-size: 24px; }
+
+/* ---------- logo em A e nome ---------- */
+.mark { background: var(--grad); box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5); }
+.wm { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+.wm-t { display: flex; flex-direction: column; min-width: 0; }
+.wm-t b { font-size: 21px; letter-spacing: 0.04em; line-height: 1.1; }
+.wm-t span { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.pd-top .wm-t b { font-size: 18px; }
+.entry-brand .lead { margin-top: 2px; }
+
+/* ---------- cartões ---------- */
+.card, .kpi, .stu-card, .item, .pay-row, .lib-row, .stat, .prod, .tip, .xc, .ex-item, .entry-card, .entry-how, .inline-note, .demo-panel, .modal, .sheet {
+  background: linear-gradient(160deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0) 58%), var(--s1);
+  border: 1px solid var(--edge);
+}
+.card, .kpi, .stu-card, .entry-card, .entry-how { border-radius: 22px; }
+.inline-note.warn, .inline-note.ok, .inline-note.err { background: var(--s1); }
+.card.hl { border-color: var(--brand); }
+.card.hl-warn { border-color: var(--warn); }
+.xc.open { border-color: var(--brand); }
+.meal.logged { border-color: var(--line); }
+.table-wrap { border-color: var(--edge); }
+.ico, .kpi-ic { background: var(--brand-soft); color: var(--brand-lt); }
+.hero-card { background: radial-gradient(380px 240px at 100% 0%, rgba(154, 104, 255, 0.45), transparent 72%), linear-gradient(155deg, #33187E, #1B1233 70%); border-color: rgba(183, 155, 255, 0.32); box-shadow: 0 18px 44px rgba(76, 29, 149, 0.35); }
+.hero-card .eyebrow { color: #D6C7FF; }
+.hero-card .bar, .hero-list .dotk { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.28); }
+.hero-card .sub, .hero-list { color: #E6DFF8; }
+
+/* indicadores: ícone, nome, valor e mini gráfico */
+.kpi { padding: 18px; gap: 8px; }
+.kpi-top { justify-content: flex-start; align-items: center; gap: 10px; margin-bottom: 2px; }
+.kpi-top .kpi-l { font-weight: 600; font-size: 15px; line-height: 1.2; color: var(--muted); }
+.kpi b { font-weight: 700; font-size: 34px; line-height: 1.05; letter-spacing: -0.015em; }
+.kpi.hot { border-color: rgba(138, 92, 255, 0.55); }
+.kpi.hot b { color: var(--brand-lt); }
+.kpi.hot .kpi-ic { background: var(--grad); color: var(--brand-ink); }
+.kpi-go { color: var(--brand-lt); }
+.kpis.sm .kpi b { font-size: 25px; }
+.kpis.dash { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.kpis.dash .kpi { grid-column: span 2; }
+.kpis.dash .kpi:nth-child(-n+2) { grid-column: span 3; }
+.spark { display: block; width: 100%; height: 48px; margin-top: 2px; }
+
+/* ---------- botões e estados ativos ---------- */
+.btn.pri { background: var(--grad); box-shadow: 0 8px 24px rgba(109, 46, 240, 0.42); }
+.btn:not(.pri):not(.ghost):not(.danger) { border-color: var(--line); background: rgba(255, 255, 255, 0.02); }
+.chip.on, .pill.brand, .badge, .okdot, .vplay, .tag.t-top, .ex-n.done, .xc-check[aria-pressed="true"], .okbtn.on, .wd.done i, .today-row.done .tk, .hero-list .done .dotk, .switch input:checked + .sw, .bar > i, .ec-ico, .av-cam { background: var(--grad); }
+.seg, .view-seg { border-color: var(--edge); }
+.seg button[aria-selected="true"], .view-seg button[aria-pressed="true"] { background: var(--grad); color: var(--brand-ink); }
+.wd.today i { box-shadow: 0 0 0 2px var(--brand-lt); }
+.pd-nav a[aria-current="page"], .al-menu a[aria-current="page"] { background: var(--grad); color: var(--brand-ink); box-shadow: 0 8px 22px rgba(109, 46, 240, 0.4); }
+.av { background: var(--s3); color: var(--brand-lt); }
+.linkbtn, .req { color: var(--brand-lt); }
+.price { color: var(--brand-lt); }
+
+/* ---------- barra de abas flutuante ---------- */
+.tabbar, .pd-tab { background: rgba(26, 18, 46, 0.86); border: 1px solid var(--edge); border-radius: 24px; backdrop-filter: blur(16px); box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5); }
+.tabbar { margin: 0 8px 8px; flex-shrink: 0; }
+.tabbar a, .pd-tab a, .pd-tab button { border-radius: 18px; color: var(--muted); }
+.tabbar a[aria-current="page"], .pd-tab a[aria-current="page"], .pd-tab button.on { color: var(--brand-ink); background: var(--grad); box-shadow: 0 6px 18px rgba(109, 46, 240, 0.45); }
+.pd-tab a[aria-current="page"] .badge { background: var(--brand-ink); color: var(--brand-2); }
+@media (max-width: 900px) {
+  .pd-tab { left: 8px; right: 8px; bottom: 8px; }
+  .pd-top { background: rgba(15, 10, 28, 0.82); border-bottom-color: var(--edge); }
+}
+
+/* ---------- celular ---------- */
+@media (max-width: 600px) {
+  .ph .h1, .hello .h1 { font-size: 28px; }
+  .kpi { padding: 14px; }
+  .kpi b { font-size: 26px; }
+  .kpis.dash { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpis.dash .kpi { grid-column: span 1; }
+  .kpis.dash .kpi:nth-child(-n+2), .kpis.dash .kpi:nth-child(5) { grid-column: span 2; }
+  .kpis:not(.dash) .kpi b { font-size: 21px; }
+  .tabbar a, .pd-tab a, .pd-tab button { font-size: 11.5px; }
+}

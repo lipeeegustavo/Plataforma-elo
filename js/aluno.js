@@ -27,7 +27,7 @@
     const screen = '<div class="screen" id="scr" data-page="' + e_(focus && page !== 'exercicio' ? 'novo' : page) + '">' + TV.netBanner() + content + '</div>';
     if (TV.alWide()) {
       // computador, modo ampliado: menu lateral e conteúdo reorganizado em colunas
-      return '<div class="al-wrap wide"><aside class="al-nav"><div class="al-brand">' + TV.logo() + '<div><b class="d">ATTO</b><br><span class="muted xs">App do aluno</span></div></div>' +
+      return '<div class="al-wrap wide"><aside class="al-nav"><div class="al-brand">' + TV.brand() + '</div>' +
         (focus && page !== 'exercicio' ? '<p class="muted sm al-nav-note">Primeiro acesso: o menu aparece depois da anamnese.</p>' : navList(tab, 'al-menu')) +
         '<div class="al-foot"><a class="row al-me" href="#/aluno/perfil">' + TV.avatar(st) + '<div><b>' + e_(st.name) + '</b><br><span class="muted xs">Aluno</span></div></a>' + viewSwitch() +
         '<a class="btn sm ghost block" href="#/pedro/inicio" data-act="as" data-arg="pedro">' + U.ic('swap', 16) + ' Ver o lado do Pedro</a></div></aside>' +
@@ -114,7 +114,7 @@
 
   function vDica(st, id) {
     const t = TV.S.tips.find((x) => x.id === id) || TV.S.tips[0];
-    return head(e_(t.title), 'inicio', e_(t.kind)) + (t.dur ? TV.videoBox({ id: 'tip-' + t.id, name: t.title, video: { kind: 'demo', dur: t.dur } }) : '') + '<div class="card"><p>' + e_(t.body) + '</p></div><a class="btn block" href="https://www.instagram.com/vechi.fit/" target="_blank" rel="noopener">Mais conteúdo no Instagram do Pedro</a>';
+    return head(e_(t.title), 'inicio', e_(t.kind)) + (t.dur ? TV.videoBox({ id: 'tip-' + t.id, name: t.title, video: { kind: 'demo', dur: t.dur } }) : '') + '<div class="card"><p>' + e_(t.body) + '</p></div><a class="btn block" href="https://www.instagram.com/" target="_blank" rel="noopener">Mais conteúdo no Instagram do Pedro</a>';
   }
 
   /* =================== TREINO =================== */

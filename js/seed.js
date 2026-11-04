@@ -228,9 +228,9 @@
       { id: 'pa-ponto', name: 'Ponto Zero Fisioterapia', desc: 'Fisioterapia esportiva e avaliação postural', link: 'loja-parceira.exemplo/ponto-zero' }
     ];
     const coupons = [
-      { id: id('cp'), partnerId: 'pa-mar', code: 'VECHI10', discount: '10% em toda a loja', until: U.addDays(T, 30), published: true },
+      { id: id('cp'), partnerId: 'pa-mar', code: 'ATTO10', discount: '10% em toda a loja', until: U.addDays(T, 30), published: true },
       { id: id('cp'), partnerId: 'pa-passo', code: 'ATTO15', discount: '15% em tênis de corrida', until: U.addDays(T, 12), published: true },
-      { id: id('cp'), partnerId: 'pa-ponto', code: 'AVALIA-TV', discount: 'Avaliação postural grátis', until: U.addDays(T, -3), published: true }
+      { id: id('cp'), partnerId: 'pa-ponto', code: 'AVALIA-ATTO', discount: 'Avaliação postural grátis', until: U.addDays(T, -3), published: true }
     ];
 
     const events = [

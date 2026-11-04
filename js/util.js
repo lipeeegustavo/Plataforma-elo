@@ -126,6 +126,11 @@
     return '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + U.esc(o.label || 'Gráfico') + '">' + g +
       '<path d="' + area + '" style="fill:var(--brand);opacity:.12"/><polyline points="' + line + '" style="fill:none;stroke:var(--brand);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round"/>' + dots + labs + '</svg>';
   };
+  U.spark = (vals, label) => {
+    const W = 120, H = 36, min = Math.min(...vals), span = Math.max(...vals) - min || 1;
+    const pts = vals.map((v, i) => (i * W / (vals.length - 1)).toFixed(1) + ',' + (H - 3 - (v - min) / span * (H - 6)).toFixed(1));
+    return '<svg class="spark" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" role="img" aria-label="' + U.esc(label) + '"><path d="M0,' + H + ' L' + pts.join(' L') + ' L' + W + ',' + H + ' Z" style="fill:var(--brand);opacity:.22"/><polyline points="' + pts.join(' ') + '" vector-effect="non-scaling-stroke" style="fill:none;stroke:var(--brand-lt);stroke-width:2;stroke-linejoin:round;stroke-linecap:round"/></svg>';
+  };
   U.bars = (items, o) => {
     o = o || {};
     if (!items.length) return '<div class="empty sm">Ainda sem dados.</div>';
@@ -150,15 +155,15 @@
 
   /* ---------- ilustrações (sem imagens externas) ---------- */
   U.productArt = (kind) => {
-    const bg = '<rect width="200" height="200" rx="0" style="fill:#1E1E1C"/><circle cx="100" cy="100" r="78" style="fill:#262624"/>';
+    const bg = '<rect width="200" height="200" rx="0" style="fill:#1C1530"/><circle cx="100" cy="100" r="78" style="fill:#261C40"/>';
     const tv = (x, y, s) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" style="font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:' + s + 'px;fill:var(--brand)">A</text>';
     const shapes = {
-      camiseta: '<path d="M62 52l26-12h24l26 12 22 26-20 14-12-10v76H72V82l-12 10-20-14z" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/><path d="M88 40a12 10 0 0 0 24 0" style="fill:none;stroke:#3A3A36;stroke-width:3"/>' + tv(100, 108, 30),
-      regata: '<path d="M74 42h14c2 14 22 14 24 0h14l-4 30 8 12v84H70V84l8-12z" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/><rect x="70" y="128" width="60" height="6" style="fill:var(--brand)"/>' + tv(100, 112, 26),
-      bone: '<path d="M52 118c0-34 22-56 50-56s46 22 46 56z" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/><path d="M40 118h112c8 0 10 12 0 14H58c-14 0-20-14-18-14z" style="fill:#151514;stroke:#3A3A36;stroke-width:2"/>' + tv(100, 106, 26),
-      garrafa: '<rect x="80" y="30" width="40" height="18" rx="5" style="fill:var(--brand)"/><rect x="72" y="48" width="56" height="124" rx="14" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/>' + tv(100, 118, 28),
-      coqueteleira: '<rect x="76" y="40" width="48" height="22" rx="6" style="fill:var(--brand)"/><path d="M72 62h56l-6 108H78z" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/><path d="M80 90h40M80 110h40M80 130h40" style="stroke:#33332F;stroke-width:2"/>' + tv(100, 158, 18),
-      toalha: '<rect x="46" y="70" width="108" height="72" rx="8" style="fill:#0E0E0D;stroke:#3A3A36;stroke-width:2"/><rect x="46" y="128" width="108" height="6" style="fill:var(--brand)"/><rect x="46" y="78" width="108" height="4" style="fill:#2A2A27"/>' + tv(100, 116, 24)
+      camiseta: '<path d="M62 52l26-12h24l26 12 22 26-20 14-12-10v76H72V82l-12 10-20-14z" style="fill:#120C22;stroke:#43366B;stroke-width:2"/><path d="M88 40a12 10 0 0 0 24 0" style="fill:none;stroke:#43366B;stroke-width:3"/>' + tv(100, 108, 30),
+      regata: '<path d="M74 42h14c2 14 22 14 24 0h14l-4 30 8 12v84H70V84l8-12z" style="fill:#120C22;stroke:#43366B;stroke-width:2"/><rect x="70" y="128" width="60" height="6" style="fill:var(--brand)"/>' + tv(100, 112, 26),
+      bone: '<path d="M52 118c0-34 22-56 50-56s46 22 46 56z" style="fill:#120C22;stroke:#43366B;stroke-width:2"/><path d="M40 118h112c8 0 10 12 0 14H58c-14 0-20-14-18-14z" style="fill:#191130;stroke:#43366B;stroke-width:2"/>' + tv(100, 106, 26),
+      garrafa: '<rect x="80" y="30" width="40" height="18" rx="5" style="fill:var(--brand)"/><rect x="72" y="48" width="56" height="124" rx="14" style="fill:#120C22;stroke:#43366B;stroke-width:2"/>' + tv(100, 118, 28),
+      coqueteleira: '<rect x="76" y="40" width="48" height="22" rx="6" style="fill:var(--brand)"/><path d="M72 62h56l-6 108H78z" style="fill:#120C22;stroke:#43366B;stroke-width:2"/><path d="M80 90h40M80 110h40M80 130h40" style="stroke:#3A2E5C;stroke-width:2"/>' + tv(100, 158, 18),
+      toalha: '<rect x="46" y="70" width="108" height="72" rx="8" style="fill:#120C22;stroke:#43366B;stroke-width:2"/><rect x="46" y="128" width="108" height="6" style="fill:var(--brand)"/><rect x="46" y="78" width="108" height="4" style="fill:#2D2347"/>' + tv(100, 116, 24)
     };
     return '<svg viewBox="0 0 200 200" class="art" role="img" aria-label="Ilustração do produto">' + bg + (shapes[kind] || shapes.camiseta) + '</svg>';
   };
@@ -169,7 +174,7 @@
       ? '<circle cx="60" cy="34" r="13"/><path d="M52 50h16c' + (6 + w / 2) + ' 8 ' + (8 + w / 2) + ' 24 ' + (4 + w / 3) + ' 42l-2 18 4 50h-10l-6-46-4 46H50l2-50-4-20c-2-18 0-32 4-40z"/>'
       : '<circle cx="60" cy="32" r="13"/><path d="M40 52h40c8 2 10 10 10 18l2 30h-8l-4-26-2 ' + (26 + w) + ' 4 56H68l-8-44-8 44H44l4-56-2-' + (26 + w) + '-4 26h-8l2-30c0-8 2-16 10-18z"/>';
     const label = { frente: 'Frente', lado: 'Lado', costas: 'Costas' }[pose] || '';
-    return '<svg viewBox="0 0 120 160" class="art" role="img" aria-label="Foto de exemplo: ' + label + '"><defs><linearGradient id="g' + pose + variant + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2B28"/><stop offset="1" stop-color="#161615"/></linearGradient></defs><rect width="120" height="160" fill="url(#g' + pose + variant + ')"/><g style="fill:' + (pose === 'costas' ? '#55524B' : '#6A665D') + '">' + body + '</g><text x="8" y="152" style="fill:#9C9A92;font-size:10px;font-family:Barlow,sans-serif">Exemplo · ' + label + '</text></svg>';
+    return '<svg viewBox="0 0 120 160" class="art" role="img" aria-label="Foto de exemplo: ' + label + '"><defs><linearGradient id="g' + pose + variant + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2140"/><stop offset="1" stop-color="#150F26"/></linearGradient></defs><rect width="120" height="160" fill="url(#g' + pose + variant + ')"/><g style="fill:' + (pose === 'costas' ? '#5A5178' : '#6F6590') + '">' + body + '</g><text x="8" y="152" style="fill:#A99FC8;font-size:10px;font-family:Barlow,sans-serif">Exemplo · ' + label + '</text></svg>';
   };
   U.photo = (src, pose, variant) => {
     if (!src) return '<div class="ph-empty">' + U.ic('image', 22) + '<span>Sem foto</span></div>';

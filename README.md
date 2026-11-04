@@ -23,7 +23,7 @@ O botão **Demo**, no canto da tela, troca entre profissional e aluno, avança a
 
 ```
 index.html        entrada do protótipo
-css/              identidade visual e telas (base, aluno, profissional, fontes)
+css/              identidade visual e telas (base, aluno, profissional, fontes, atto para o acabamento visual)
 js/util.js        datas, formatação, ícones e gráficos
 js/store.js       estado, armazenamento local e data simulada
 js/seed.js        dados de demonstração

@@ -11,6 +11,7 @@
     let s = null;
     try { const raw = localStorage.getItem(KEY); if (raw) s = JSON.parse(raw); } catch (e) { s = null; }
     if (!s || s.v !== 1) s = TV.seed();
+    (s.coupons || []).forEach((c) => { c.code = ({ VECHI10: 'ATTO10', 'AVALIA-TV': 'AVALIA-ATTO' })[c.code] || c.code; }); // dados salvos antes da marca ATTO
     TV.S = s;
   };
   let saveT = null;

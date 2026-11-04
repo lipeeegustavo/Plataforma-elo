@@ -1,24 +1,27 @@
 /* ATTO — base: identidade visual (escuro com roxo), tipografia e componentes compartilhados.
    As cores da marca ficam nas variáveis --brand* logo abaixo. */
 :root {
-  --bg: #09080F;
-  --app: #100E18;
-  --s1: #17151F;
-  --s2: #201D2B;
-  --s3: #2B2738;
-  --line: #342F44;
-  --fg: #F5F4F0;
-  --muted: #BCB7CC;
-  --dim: #9E99AE;
+  --bg: #0A0614;
+  --app: #0F0A1C;
+  --s1: #171127;
+  --s2: #211936;
+  --s3: #2D2347;
+  --line: #372C55;
+  --fg: #F6F3FF;
+  --muted: #BDB5D6;
+  --dim: #A097BF;
   --brand: #8A5CFF;
-  --brand-2: #6A3CF5;
+  --brand-2: #6D2EF0;
+  --brand-lt: #B79BFF;
+  --grad: linear-gradient(135deg, #6D2EF0, #9A68FF);
+  --edge: rgba(183, 155, 255, 0.14);
   --brand-ink: #FFFFFF;
   --brand-soft: rgba(138, 92, 255, 0.16);
   --ok: #6BCB8F;
   --warn: #F2BC52;
   --err: #FF7B6B;
   --info: #84BDFF;
-  --f-d: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --f-d: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --f-b: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --r: 14px;
   color-scheme: dark;
@@ -169,7 +172,7 @@ a.item:hover, button.item:hover { border-color: var(--line); }
 .in:focus { border-color: var(--brand); outline: none; box-shadow: 0 0 0 3px var(--brand-soft); }
 textarea.in { padding: 10px 12px; min-height: 84px; resize: vertical; line-height: 1.4; }
 select.in { padding: 0 10px; }
-.in::placeholder { color: #7D7C76; }
+.in::placeholder { color: #8C83AB; }
 .in.search { max-width: 360px; }
 .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; cursor: pointer; }
 .check input { width: 22px; height: 22px; accent-color: var(--brand); flex-shrink: 0; margin-top: 1px; }
@@ -219,7 +222,7 @@ select.in { padding: 0 10px; }
 @keyframes toastIn { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
 
 /* ---------- painel da demo ---------- */
-.fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 72; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 14px; border-radius: 21px; border: 1px solid var(--line); background: rgba(26, 26, 24, 0.94); color: var(--fg); font-weight: 700; font-size: 13.5px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); backdrop-filter: blur(6px); }
+.fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 72; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 14px; border-radius: 21px; border: 1px solid var(--line); background: rgba(26, 18, 46, 0.94); color: var(--fg); font-weight: 700; font-size: 13.5px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); backdrop-filter: blur(6px); }
 .fab .ic { color: var(--brand); }
 .dp-back { position: fixed; inset: 0; z-index: 70; background: rgba(0, 0, 0, 0.35); }
 .demo-panel { position: fixed; z-index: 71; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(72px + env(safe-area-inset-bottom, 0px)); width: min(380px, calc(100vw - 32px)); max-height: calc(100dvh - 110px); overflow-y: auto; background: var(--s1); border: 1px solid var(--line); border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55); }
@@ -293,7 +296,7 @@ select.in { padding: 0 10px; }
 .crop-view.dragging { cursor: grabbing; }
 .crop-view:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 .crop-view img, .crop-prev img { position: absolute; left: 0; top: 0; max-width: none; transform-origin: 0 0; pointer-events: none; user-select: none; }
-.crop-mask { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 138px, rgba(10, 10, 9, 0.68) 139px); }
+.crop-mask { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 138px, rgba(10, 6, 20, 0.68) 139px); }
 .crop-mask::after { content: ""; position: absolute; inset: 1px; border-radius: 50%; border: 2px solid var(--brand); }
 .range { width: 100%; accent-color: var(--brand); min-height: 32px; }
 .crop-previews { display: flex; flex-direction: column; gap: 8px; }
@@ -306,7 +309,7 @@ select.in { padding: 0 10px; }
 .pd-me-top { border-radius: 50%; text-decoration: none; min-width: 40px; min-height: 40px; display: inline-grid; place-items: center; }
 
 /* ---------- modo apresentação: roteiro guiado da demonstração ---------- */
-.pbar { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 74; width: min(380px, calc(100vw - 32px)); background: rgba(20, 20, 19, 0.97); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px); display: flex; flex-direction: column; overflow: hidden; }
+.pbar { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 74; width: min(380px, calc(100vw - 32px)); background: rgba(23, 17, 39, 0.97); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px); display: flex; flex-direction: column; overflow: hidden; }
 .pbar-head { display: flex; align-items: center; gap: 4px; padding: 6px; }
 .pbar-tg { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; background: transparent; border: 0; color: var(--fg); text-align: left; padding: 6px 8px; border-radius: 12px; min-height: 44px; }
 .pbar-tg b { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 15px; }
@@ -315,7 +318,7 @@ select.in { padding: 0 10px; }
 .pbar .icon-btn { width: 40px; height: 40px; }
 .pbar .icon-btn.pri { background: var(--brand); color: var(--brand-ink); border-color: transparent; }
 .pbar .icon-btn[disabled] { opacity: 0.35; cursor: default; }
-.pbar-hint { padding: 0 16px 10px; font-size: 14.5px; color: #DCDAD3; }
+.pbar-hint { padding: 0 16px 10px; font-size: 14.5px; color: #DDD7EE; }
 .pbar-hint .linkbtn { display: inline-flex; margin-right: 8px; }
 .pbar-list { list-style: none; margin: 0; padding: 4px 8px 8px; border-top: 1px solid var(--line); max-height: min(300px, 38vh); overflow-y: auto; }
 .pbar-list button { width: 100%; display: flex; gap: 10px; align-items: center; text-align: left; background: transparent; border: 0; color: var(--muted); padding: 7px 8px; border-radius: 10px; font-size: 14px; font-weight: 600; }
