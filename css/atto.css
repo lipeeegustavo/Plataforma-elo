@@ -3,7 +3,9 @@
 
 /* ---------- fundo com brilho roxo ---------- */
 body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(760px 460px at 88% -8%, rgba(124, 58, 237, 0.34), transparent 70%), radial-gradient(620px 420px at -6% 104%, rgba(109, 46, 240, 0.2), transparent 70%); }
-body[data-area="aluno"], .entry { background: transparent; }
+body[data-area="aluno"] { background: var(--bg); }
+.entry { background: transparent; }
+.phone .screen { scrollbar-width: none; }
 .phone { background: radial-gradient(520px 340px at 100% -6%, rgba(124, 58, 237, 0.34), transparent 72%), var(--app); }
 .phone-notch { background: transparent; }
 .al-wrap.wide .phone, .al-main { background: transparent; }
@@ -66,6 +68,11 @@ body[data-area="aluno"], .entry { background: transparent; }
 .kpis.dash .kpi { grid-column: span 2; }
 .kpis.dash .kpi:nth-child(-n+2) { grid-column: span 3; }
 .spark { display: block; width: 100%; height: 48px; margin-top: 2px; }
+@media (min-width: 601px) {
+  .kpis.dash .kpi:nth-child(-n+2) { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 28px; }
+  .kpis.dash .kpi:nth-child(-n+2) .kpi-top { grid-column: 1 / -1; }
+  .kpis.dash .kpi:nth-child(-n+2) .spark { grid-column: 2; grid-row: 2 / span 2; align-self: end; height: 58px; margin: 0; }
+}
 
 /* ---------- botões e estados ativos ---------- */
 .btn.pri { background: var(--grad); box-shadow: 0 8px 24px rgba(109, 46, 240, 0.42); }
